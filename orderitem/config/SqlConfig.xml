@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<properties resource="db.properties"></properties>
+	<settings>
+		<setting name="logImpl" value="LOG4J"></setting>
+	</settings>
+	<typeAliases>
+		<!-- <typeAlias type="com.byzx.mybatis.vo.User" alias="User"></typeAlias> -->
+		<!-- 给包里面的所有类起别名，别名就是类名 -->
+		<package name="com.byzx.mybatis.vo"></package>
+	</typeAliases>
+	<!-- 配置数据库环境 -->
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="${jdbc.driver}"></property>
+				<property name="url" value="${jdbc.url}"></property>
+				<property name="username" value="${jdbc.username}"></property>
+				<property name="password" value="${jdbc.password}"></property>
+			</dataSource>
+		</environment>
+	</environments>
+	<!-- 关联映射文件 -->
+	<mappers>
+		<!-- <mapper resource="com/byzx/mybatis/mapper/UserMapper.xml"></mapper> -->
+		<!-- <mapper class="com.byzx.mybatis.mapper.UserMapper"></mapper> -->
+		<package name="com.byzx.mybatis.dao"></package>
+	</mappers>
+</configuration>
+
+
+
+
+
+
+
+
+
+
+
